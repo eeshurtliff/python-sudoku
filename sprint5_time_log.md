@@ -35,8 +35,8 @@ The expected minimum amount of time each Sprint for each category is as follows:
 |  12/4/24 |   8:30pm |  TP    |  Met with a couple proffesors to get help with the problems we have. |  60     |
 |  12/4/24 |   2pm    |   IM   |    built the border for the soduku game    |    60       |
 |  12/4/24 |   4pm    |   TP   |  Met with a couple proffesors to get help with the problems we have.  |     60      |
-|          |          |        |                                            |             |
-|          |          |        |                                            |             |
+|  12/4/24 |   7:30pm |   IM   |  made selector box move, worked on finding/making puzzels|   127      |
+|  12/5/24 |  11:30pm |   TP   |  worked on the database connections for the web app and met with my team |  420        |
 |          |          |        |                                            |             |
 
 _Note: Add more rows as needed._

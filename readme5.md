@@ -38,7 +38,8 @@ I found these websites useful in developing this software:
 * [How to draw rectangle in Pygame?](https://www.geeksforgeeks.org/how-to-draw-rectangle-in-pygame/)
 * [Python - Moving an object in PyGame](https://www.geeksforgeeks.org/python-moving-an-object-in-pygame/)
 * [How to get keyboard input in PyGame?](https://www.geeksforgeeks.org/how-to-get-keyboard-input-in-pygame/)
-* 
+* [How Do We Create Sudoku?](https://www.sudokuoftheday.com/creation)
+* [Sudoku 4x4](https://www.sudokuweb.org/sudoku-4x4/#google_vignette)
 
 ## Future Work
 

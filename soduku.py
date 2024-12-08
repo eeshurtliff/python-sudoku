@@ -8,10 +8,10 @@ border_color = (255, 0, 0)
 selected = (252, 186, 3)
 ball_color = (255, 255, 255)
 
-selected_y = 50
-selected_x = 50
+min_limit = 50
+max_limit = 425
 
-border1 = pygame.Rect(50, 50, 500, 500)
+border = pygame.Rect(50, 50, 500, 500)
 left_square = pygame.Rect(50, 50, 250, 250)
 right_square = pygame.Rect(300, 50, 250, 250)
 lb_square = pygame.Rect(50, 300, 250, 250)
@@ -19,18 +19,25 @@ line = pygame.Rect(50, 175, 500, 1)
 line2 = pygame.Rect(50, 425, 500, 1)
 line3 = pygame.Rect(175, 50, 1, 500)
 line4 = pygame.Rect(425, 50, 1, 500)
-selected_square = pygame.Rect(selected_x, selected_y, 125, 125)
+selected_square = pygame.Rect(50, 50, 125, 125)
 rb_square = pygame.Rect(300, 300, 250, 250)
-paddle2 = pygame.Rect(740, 250, 10, 100)
-ball = pygame.Rect(390, 290, 20, 20)
+
+COMPLETE = [
+    
+]
+
+# some soduku options to start with:
 
 
 
-ball_velocity = [5, 5]
-if ball.colliderect(border1) or ball.colliderect(paddle2):
-    ball_velocity[0] = -ball_velocity[0]
-if ball.top <= 0 or ball.bottom >=600:
-    ball_velocity[1] = -ball_velocity[1]
+# edge = True
+
+# ball_velocity = [5, 5]
+# if selected_square.colliderect(border):
+#     ball_velocity[0] = -ball_velocity[0]
+    
+# if ball.top <= 0 or ball.bottom >=600:
+#     ball_velocity[1] = -ball_velocity[1]
 
 
 running = True
@@ -39,22 +46,27 @@ while running:
         if event.type == pygame.QUIT:
             running = False
         if event.type == pygame.KEYDOWN:
-            print("A key has been pressed")
 
-            if event.key == pygame.K_UP:
+            if event.key == pygame.K_UP and selected_square.y != 50:
                 print("up arrow pressed")
-                selected_y -= 50
-            if event.key == pygame.K_DOWN:
+                selected_square.move_ip((0, -125))
+                # selected_y -= 50
+            if event.key == pygame.K_DOWN and selected_square.y != 425:
                 print("down arrow pressed")
-                selected_y += 50
-            if event.key == pygame.K_LEFT:
+                selected_square.move_ip((0, 125))
+                # selected_y += 50
+            if event.key == pygame.K_LEFT and selected_square.x != 50:
                 print("left arrow pressed")
-                selected_x -= 50
-            if event.key == pygame.K_RIGHT:
+                selected_square.move_ip((-125, 0))
+                # selected_x -= 50
+            if event.key == pygame.K_RIGHT and selected_square.x != 425:
                 print("right arrow pressed")
-                selected_x += 50
+                selected_square.move_ip((125, 0))
+                # selected_x += 50
 
-    pygame.draw.rect(screen, border_color, border1, 2)
+    screen.fill((0, 0, 0))
+
+    pygame.draw.rect(screen, border_color, border, 2)
     pygame.draw.rect(screen, border_color, left_square, 1)
     pygame.draw.rect(screen, border_color, right_square, 1)
     pygame.draw.rect(screen, border_color, rb_square, 1)
@@ -63,13 +75,9 @@ while running:
     pygame.draw.rect(screen, border_color, line2)
     pygame.draw.rect(screen, border_color, line3)
     pygame.draw.rect(screen, border_color, line4)
-    pygame.draw.rect(screen, selected, (selected_x, selected_y, 125, 125), 2)
-    # pygame.draw.rect(screen, border_color, paddle2)
-    # pygame.draw.rect(screen, ball_color, ball)
-    pygame.display.update()
+    pygame.draw.rect(screen, selected, selected_square, 2)
+    
+    pygame.display.flip()
 pygame.quit()
 
 
-def draw_graph():
-    border1 = pygame.Rect(50, 50, 500, 500)
-    left_square = pygame.Rect(50, 50, 250, 250)
