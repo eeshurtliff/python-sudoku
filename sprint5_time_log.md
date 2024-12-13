@@ -37,7 +37,8 @@ The expected minimum amount of time each Sprint for each category is as follows:
 |  12/4/24 |   4pm    |   TP   |  Met with a couple proffesors to get help with the problems we have.  |     60      |
 |  12/4/24 |   7:30pm |   IM   |  made selector box move, worked on finding/making puzzels|   127      |
 |  12/5/24 |  11:30pm |   TP   |  worked on the database connections for the web app and met with my team |  420        |
-|          |          |        |                                            |             |
+|  12/7/24 |  10am    |   TP   |  fixed bugs and saved created tasks to the database  |   420   |
+|  12/8/24 |  1pm     |   IM   |  learned how to add text to the pygame     |    90       |
 
 _Note: Add more rows as needed._
 
@@ -45,7 +46,7 @@ _Note: Add more rows as needed._
 
 |Categroy                       |Total Time (Hours:Minutes)|
 |-------------------------------|:------------------------:|
-|IM - Individual Module         |                          |
-|TP - Team Project              |                          |
-|MTG - Class Meetings           |                          |
+|IM - Individual Module         |          7:07            |
+|TP - Team Project              |          21:10           |
+|MTG - Class Meetings           |             4             |
 |**TOTAL**                      |                          |

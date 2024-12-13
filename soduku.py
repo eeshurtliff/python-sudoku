@@ -1,12 +1,32 @@
 import pygame
+from puzzel_maker import puzzel_details
 
 pygame.init()
 screen = pygame.display.set_mode((600, 600))
-pygame.display.set_caption("Soduku")
+pygame.display.set_caption("Sudoku")
+
+
+square_positions = [
+    (50, 50), (175, 50), (300, 50), (425, 50),
+    (50, 175), (175, 175), (300, 175), (425, 175),
+    (50, 300), (175, 300), (300, 300), (425, 300),
+    (50, 425), (175, 425), (300, 425), (425, 425),
+]
+
+
 
 border_color = (255, 0, 0)
 selected = (252, 186, 3)
 ball_color = (255, 255, 255)
+
+white = (255, 255, 255)
+blue = (0, 0, 128)
+
+print(pygame.font.get_fonts())
+font = pygame.font.SysFont('calisto', 80)
+text = font.render('4', True, white)
+textRect = text.get_rect()
+textRect.center = 300, 300
 
 min_limit = 50
 max_limit = 425
@@ -26,19 +46,6 @@ COMPLETE = [
     
 ]
 
-# some soduku options to start with:
-
-
-
-# edge = True
-
-# ball_velocity = [5, 5]
-# if selected_square.colliderect(border):
-#     ball_velocity[0] = -ball_velocity[0]
-    
-# if ball.top <= 0 or ball.bottom >=600:
-#     ball_velocity[1] = -ball_velocity[1]
-
 
 running = True
 while running:
@@ -48,19 +55,15 @@ while running:
         if event.type == pygame.KEYDOWN:
 
             if event.key == pygame.K_UP and selected_square.y != 50:
-                print("up arrow pressed")
                 selected_square.move_ip((0, -125))
                 # selected_y -= 50
             if event.key == pygame.K_DOWN and selected_square.y != 425:
-                print("down arrow pressed")
                 selected_square.move_ip((0, 125))
                 # selected_y += 50
             if event.key == pygame.K_LEFT and selected_square.x != 50:
-                print("left arrow pressed")
                 selected_square.move_ip((-125, 0))
                 # selected_x -= 50
             if event.key == pygame.K_RIGHT and selected_square.x != 425:
-                print("right arrow pressed")
                 selected_square.move_ip((125, 0))
                 # selected_x += 50
 
@@ -76,6 +79,8 @@ while running:
     pygame.draw.rect(screen, border_color, line3)
     pygame.draw.rect(screen, border_color, line4)
     pygame.draw.rect(screen, selected, selected_square, 2)
+    screen.blit(text, textRect)
+
     
     pygame.display.flip()
 pygame.quit()
