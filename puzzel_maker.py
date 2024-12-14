@@ -7,6 +7,7 @@ class Puzzel:
 
         self.start_puzzel = self.get_puzzel(puzzel_index)
         self.answer = self.get_answer(puzzel_index)
+        self.game_board = self.start_puzzel
         
 
     def get_rand_num(self, size):
@@ -64,3 +65,30 @@ class Puzzel:
 
         answers = [one, two, three]
         return answers[index]
+
+    def check_spot_empty(self, x, y):
+        selected = (x, y)
+        spot_index = self.positions.index(selected)
+        if self.game_board[spot_index] == 0:
+            if spot_index == 0:
+                return 17
+            return spot_index
+        elif self.game_board[spot_index] != self.answer[spot_index]:
+            if spot_index == 0:
+                return 17
+            return spot_index
+        else:
+            print(self.start_puzzel[spot_index])
+            return False
+    
+    def check_guess(self, guess, index):
+        correct = self.answer[index]
+        self.game_board[index] = guess
+        if guess == correct:
+            return True
+        return False
+    
+    def check_solved(self):
+        if self.game_board == self.answer:
+            return True
+        return False
