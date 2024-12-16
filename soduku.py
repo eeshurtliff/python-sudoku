@@ -41,7 +41,7 @@ def check_input(puzzel, x, y, font, inputs, blue, gray, num):
         if index == 17:
             index = 0
         if puzzel.check_guess(num, index):
-            print('correct!')
+            # print('correct!')
             new = font.render(f'{num}', True, blue)
             newRect = new.get_rect()
             newRect.center = x + 60, y + 60
@@ -50,7 +50,7 @@ def check_input(puzzel, x, y, font, inputs, blue, gray, num):
             newRect = new.get_rect()
             newRect.center = x + 60, y + 60
         inputs[index] = (new, newRect)
-    print(inputs)
+    # print(inputs)
 
         
 
@@ -70,7 +70,7 @@ def main():
 
     puzzel = Puzzel(square_positions)
     print(puzzel.game_board)
-    print(len(square_positions))
+    # print(len(square_positions))
 
 
 
@@ -128,25 +128,25 @@ def main():
                 if event.key == pygame.K_1:
                     x = selected_square.x
                     y = selected_square.y
-                    print("pushed 1")
+                    
                     check_input(puzzel, x, y, font, inputs, blue, gray, 1)
                     
                 if event.key == pygame.K_2:
                     x = selected_square.x
                     y = selected_square.y
-                    print("pushed 2")
+                    
                     check_input(puzzel, x, y, font, inputs, blue, gray, 2)
 
                 if event.key == pygame.K_3:
                     x = selected_square.x
                     y = selected_square.y
-                    print("pushed 3")
+                    
                     check_input(puzzel, x, y, font, inputs, blue, gray, 3)
 
                 if event.key == pygame.K_4:
                     x = selected_square.x
                     y = selected_square.y
-                    print("pushed 4")
+                    
                     check_input(puzzel, x, y, font, inputs, blue, gray, 4)
 
             if puzzel.check_solved() == True:

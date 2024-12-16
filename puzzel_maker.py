@@ -78,7 +78,7 @@ class Puzzel:
                 return 17
             return spot_index
         else:
-            print(self.start_puzzel[spot_index])
+            # print(self.start_puzzel[spot_index])
             return False
     
     def check_guess(self, guess, index):
