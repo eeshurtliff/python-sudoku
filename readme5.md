@@ -1,32 +1,31 @@
 ## Overview
 
-**Project Title**:
+**Project Title**: 4x4 Sudoku
 
-**Project Description**:
+**Project Description**: A sudoku computer game written with pygame
 
-**Project Goals**:
+**Project Goals**: Create a sudoku game for users to play on their computers. 
 
 ## Instructions for Build and Use
 
 Steps to build and/or run the software:
 
-1. First step here
-2.
-3.
+1. run the sudoku.py file in a file editor like vs code. 
+
 
 Instructions for using the software:
 
-1. First step here
-2.
-3.
+1. use the up, down, right, left keyboard arrows to move the yellow square around the board.
+2. Use number keys 1-4 to fill in the squares.
+3. If the number you type is blue, it is correct. If it is gray, you need to try again. 
 
 ## Development Environment 
 
 To recreate the development environment, you need the following software and/or libraries with the specified versions:
 
-* First thing here
-*
-*
+* install python 
+* install pygame
+* download the puzzel_maker.py and sudoku.py files
 
 ## Useful Websites to Learn More
 
@@ -45,6 +44,6 @@ I found these websites useful in developing this software:
 
 The following items I plan to fix, improve, and/or add to this project in the future:
 
-* [ ] First thing here
-* [ ]
-* [ ]
+* [ ] create more options for sudoku games.
+* [ ] add different difficulties. 
+* [ ] make this a full Sudoku game.
